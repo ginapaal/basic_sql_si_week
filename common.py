@@ -34,7 +34,7 @@ def cursor_execute(query, conn):
 
 
 def list_mentor_names(conn):
-    print_query("""SELECT first_name, last_name FROM mentors;""")
+    print_query("""SELECT first_name, last_name FROM mentors;""", conn)
 
 
 def nicknames(conn):
