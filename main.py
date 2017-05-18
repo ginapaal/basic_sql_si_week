@@ -3,7 +3,6 @@ from common import *
 
 
 def main(user_input):
-    user_input = menu()
     conn = make_connection()
     if user_input == 1:
         list_mentor_names(conn)
@@ -24,4 +23,5 @@ def main(user_input):
 
 
 if __name__ == "__main__":
+    user_input = menu()
     main(user_input)
