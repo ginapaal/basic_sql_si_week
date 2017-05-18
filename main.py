@@ -1,4 +1,3 @@
-import sys
 from common import *
 from query import *
 
@@ -23,7 +22,7 @@ def main(user_input):
         elif user_input == 7:
             cancel_process(conn)
         elif user_input == 0:
-            sys.exit()
+            break
 
 
 if __name__ == "__main__":
