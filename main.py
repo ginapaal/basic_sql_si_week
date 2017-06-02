@@ -34,5 +34,13 @@ def mentors_by_country():
     return render_template('mentors_by_country.html', rows=rows)
 
 
+@app.route('/contacts', methods=['GET', 'POST'])
+def contacts():
+    conn = common. make_connection()
+    rows = query.contacts(conn)
+    conn.close()
+    return render_template('contacts.html', rows=rows)
+
+
 if __name__ == "__main__":
     app.run()
