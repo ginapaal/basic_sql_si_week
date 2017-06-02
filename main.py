@@ -1,5 +1,5 @@
-from common import *
-from query import *
+import common
+import query
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -10,9 +10,12 @@ def main_page():
     return render_template('main_page.html')
 
 
-@app.route('/mentors', methods=['GET'])
+@app.route('/mentors', methods=['GET', 'POST'])
 def mentors_and_schools():
-    pass
+    conn = common.make_connection()
+    rows = query.mentors(conn)
+    conn.close()
+    return render_template('mentors.html', rows=rows)
 
 
 if __name__ == "__main__":
