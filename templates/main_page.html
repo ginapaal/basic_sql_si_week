@@ -4,33 +4,34 @@
 
 <head>
     <title> Application Process </title>
-</head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main_page.css') }}" </head>
 
-<body>
-    <form action="/mentors" method="POST">
-        <input type="submit" value="Mentors and schools page">
-    </form>
+    <body>
+        <div class="styled-buttons">
+            <form id="mentors-schools" action="/mentors" method="POST">
+                <input type="submit" value="Mentors and schools page">
+            </form>
 
-    <form action="/all-school" method="POST">
-        <input type="submit" value="All school page">
-    </form>
+            <form id="all-school" action="/all-school" method="POST">
+                <input type="submit" value="All school page">
+            </form>
 
-    <form action="/mentors-by-country" method="POST">
-        <input type="submit" value="Mentors by country page">
-    </form>
+            <form id="mentors-by-country" action="/mentors-by-country" method="POST">
+                <input type="submit" value="Mentors by country page">
+            </form>
 
-    <form action="contacts" method="POST">
-        <input type="submit" value="Contacts page">
-    </form>
+            <form id="contacts" action="contacts" method="POST">
+                <input type="submit" value="Contacts page">
+            </form>
 
-    <form action="applicants" method="POST">
-        <input type="submit" value="Applicants page">
-    </form>
+            <form id="applicants" action="applicants" method="POST">
+                <input type="submit" value="Applicants page">
+            </form>
 
-    <form action="applicants-and-mentors" method="POST">
-        <input type="submit" value="Applicants and mentors page">
-    </form>
-
-</body>
+            <form id="applicants-and-mentors" action="applicants-and-mentors" method="POST">
+                <input type="submit" value="Applicants and mentors page">
+            </form>
+        </div>
+    </body>
 
 </html>
