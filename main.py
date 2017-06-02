@@ -36,10 +36,18 @@ def mentors_by_country():
 
 @app.route('/contacts', methods=['GET', 'POST'])
 def contacts():
-    conn = common. make_connection()
+    conn = common.make_connection()
     rows = query.contacts(conn)
     conn.close()
     return render_template('contacts.html', rows=rows)
+
+
+@app.route('/applicants', methods=['GET', 'POST'])
+def applicants():
+    conn = common.make_connection()
+    rows = query.applicants(conn)
+    conn.close()
+    return render_template('applicants.html', rows=rows)
 
 
 if __name__ == "__main__":

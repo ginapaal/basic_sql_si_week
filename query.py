@@ -27,6 +27,14 @@ def mentors_by_country(conn):
 def contacts(conn):
     rows = ask_query("""SELECT schools.name, CONCAT(mentors.first_name,' ',mentors.last_name)
                         FROM mentors 
-                        INNER JOIN schools ON mentors.id = schools.contact_person 
+                        INNER JOIN schools ON mentors.id = schools.contact_person
                         ORDER BY schools.name;""", conn)
+    return rows
+
+
+def applicants(conn):
+    rows = ask_query("""SELECT applicants.first_name, applicants.application_code, applicants_mentors.creation_date FROM applicants
+                        JOIN applicants_mentors ON applicants.id = applicants_mentors.applicant_id
+                        WHERE applicants_mentors.creation_date > '2016-01-01'
+                        ORDER BY applicants_mentors.creation_date DESC;""", conn)
     return rows
