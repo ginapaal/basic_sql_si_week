@@ -50,5 +50,13 @@ def applicants():
     return render_template('applicants.html', rows=rows)
 
 
+@app.route('/applicants-and-mentors', methods=['GET', 'POST'])
+def applicants_and_mentors():
+    conn = common.make_connection()
+    rows = query.applicants_and_mentors(conn)
+    conn.close()
+    return render_template("applicants_and_mentors.html", rows=rows)
+
+
 if __name__ == "__main__":
     app.run()

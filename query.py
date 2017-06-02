@@ -38,3 +38,12 @@ def applicants(conn):
                         WHERE applicants_mentors.creation_date > '2016-01-01'
                         ORDER BY applicants_mentors.creation_date DESC;""", conn)
     return rows
+
+
+def applicants_and_mentors(conn):
+    rows = ask_query("""SELECT applicants.first_name, applicants.application_code, CONCAT(mentors.first_name,' ',mentors.last_name)
+                        FROM applicants
+                        FULL JOIN applicants_mentors ON applicants.id = applicants_mentors.applicant_id
+                        LEFT JOIN mentors ON mentors.id = applicants_mentors.mentor_id
+                        ORDER BY applicants.id ASC;""", conn)
+    return rows
