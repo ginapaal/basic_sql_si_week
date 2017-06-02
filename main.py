@@ -26,5 +26,13 @@ def all_shool():
     return render_template('all_school.html', rows=rows)
 
 
+@app.route('/mentors-by-country', methods=['GET', 'POST'])
+def mentors_by_country():
+    conn = common.make_connection()
+    rows = query.mentors_by_country(conn)
+    conn.close()
+    return render_template('mentors_by_country.html', rows=rows)
+
+
 if __name__ == "__main__":
     app.run()
