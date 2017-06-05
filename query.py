@@ -1,3 +1,6 @@
+"""In this module i created the querys sticked to the requirements"""
+
+
 import psycopg2
 import common
 
